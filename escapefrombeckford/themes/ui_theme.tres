@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://1dr1eewpv0jd"]
+
+[ext_resource type="FontFile" uid="uid://ds3b4ujyapi6w" path="res://assets/fonts/Prompt/Prompt-Medium.ttf" id="1_xxbg1"]
+
+[resource]
+Label/font_sizes/font_size = 26
+Label/fonts/font = ExtResource("1_xxbg1")
+RichTextLabel/constants/line_separation = 0
+RichTextLabel/fonts/normal_font = ExtResource("1_xxbg1")

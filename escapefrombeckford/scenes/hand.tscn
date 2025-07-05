@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy1kfsc2qfglo"]
+
+[ext_resource type="Script" uid="uid://hl2ey2v5qhl1" path="res://scenes/hand.gd" id="1_eyfoh"]
+[ext_resource type="PackedScene" uid="uid://c477qukem6kmd" path="res://scenes/card_target_selector.tscn" id="2_yinqy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eyfoh"]
+radius = 1600.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyfoh"]
+size = Vector2(1920, 310.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7pjy"]
+size = Vector2(1920, 559.75)
+
+[node name="Hand" type="Node2D"]
+script = ExtResource("1_eyfoh")
+
+[node name="DebugShape" type="CollisionShape2D" parent="."]
+position = Vector2(960, 2500)
+shape = SubResource("CircleShape2D_eyfoh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 2.0
+offset_top = 453.0
+offset_right = 1150.0
+offset_bottom = 493.0
+
+[node name="HandArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HandArea"]
+position = Vector2(960, 924.375)
+shape = SubResource("RectangleShape2D_eyfoh")
+
+[node name="CardDropArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(960, 467.875)
+shape = SubResource("RectangleShape2D_k7pjy")
+debug_color = Color(0, 0.595, 0.7, 0.0156863)
+
+[node name="CardTargetSelector" parent="." instance=ExtResource("2_yinqy")]
+
+[node name="HandCardsNode" type="Node2D" parent="."]
+
+[connection signal="mouse_entered" from="HandArea" to="." method="_on_hand_area_mouse_entered"]
+[connection signal="mouse_exited" from="HandArea" to="." method="_on_hand_area_mouse_exited"]

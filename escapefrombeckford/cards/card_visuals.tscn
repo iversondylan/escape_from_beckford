@@ -1,0 +1,153 @@
+[gd_scene load_steps=14 format=3 uid="uid://dlpbxdm81neil"]
+
+[ext_resource type="Script" uid="uid://ds2ql77j3pbxq" path="res://cards/card_visuals.gd" id="1_2ndsp"]
+[ext_resource type="Texture2D" uid="uid://7wqf7vhvv0ae" path="res://assets/sprites/card_glow.PNG" id="1_w227c"]
+[ext_resource type="Texture2D" uid="uid://g3uejbpxis8v" path="res://assets/sprites/card_front_5.png" id="2_82ga3"]
+[ext_resource type="Resource" uid="uid://b7txf6d8vmjkk" path="res://cards/SpectralCloneCard/spectral_clone.tres" id="2_e5rkb"]
+[ext_resource type="Theme" uid="uid://1dr1eewpv0jd" path="res://themes/ui_theme.tres" id="3_2ndsp"]
+[ext_resource type="Texture2D" uid="uid://cvvxggb32iq5y" path="res://assets/sprites/warp_weasel.png" id="4_e5rkb"]
+[ext_resource type="Texture2D" uid="uid://by7k7bj3x563o" path="res://assets/sprites/tri_energy_cost.png" id="5_i7m3k"]
+[ext_resource type="Texture2D" uid="uid://c2cpjnsgjdd1x" path="res://assets/sprites/card_back_1.PNG" id="6_spa0x"]
+[ext_resource type="Texture2D" uid="uid://cdap6hv4e5qcw" path="res://assets/sprites/tri_white.png" id="7_fq4np"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g488w"]
+size = Vector2(120, 168)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oaqlk"]
+font_size = 15
+font_color = Color(0.140093, 0.227105, 0.463286, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1xofn"]
+font_size = 15
+font_color = Color(0.396814, 0.0819456, 0.100571, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_11vvc"]
+font_size = 15
+font_color = Color(0.0770968, 0.232071, 0.0917201, 1)
+
+[node name="CardVisuals" type="Control"]
+custom_minimum_size = Vector2(126, 178)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2ndsp")
+card_data = ExtResource("2_e5rkb")
+
+[node name="Glow" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(66, 94)
+texture = ExtResource("1_w227c")
+
+[node name="CardFront" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(66, 94)
+texture = ExtResource("2_82ga3")
+
+[node name="CardName" type="Node2D" parent="."]
+position = Vector2(40, 7)
+
+[node name="NameLabel" type="RichTextLabel" parent="CardName"]
+unique_name_in_owner = true
+offset_left = -7.0
+offset_top = 3.0
+offset_right = 79.0
+offset_bottom = 24.0
+theme = ExtResource("3_2ndsp")
+theme_override_font_sizes/normal_font_size = 10
+text = "Card Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardDescription" type="Node2D" parent="."]
+position = Vector2(20, 121)
+
+[node name="Description" type="RichTextLabel" parent="CardDescription"]
+unique_name_in_owner = true
+offset_left = -7.0
+offset_top = -15.0
+offset_right = 99.0
+offset_bottom = 49.0
+theme = ExtResource("3_2ndsp")
+theme_override_font_sizes/normal_font_size = 8
+text = "Card Description"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClickArea" type="Area2D" parent="."]
+position = Vector2(66, 94)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+shape = SubResource("RectangleShape2D_g488w")
+
+[node name="CardArtRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 15.0
+offset_top = 37.0
+offset_right = 117.0
+offset_bottom = 99.0
+mouse_filter = 2
+texture = ExtResource("4_e5rkb")
+expand_mode = 2
+
+[node name="CostDisplay" type="Node2D" parent="."]
+position = Vector2(21, 24)
+
+[node name="CostContainer" type="Sprite2D" parent="CostDisplay"]
+unique_name_in_owner = true
+texture = ExtResource("5_i7m3k")
+
+[node name="CostBlue" type="Label" parent="CostDisplay"]
+unique_name_in_owner = true
+offset_left = -12.0
+offset_top = -27.0
+offset_right = 12.0
+offset_bottom = -3.0
+theme = ExtResource("3_2ndsp")
+text = "1"
+label_settings = SubResource("LabelSettings_oaqlk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CostRed" type="Label" parent="CostDisplay"]
+unique_name_in_owner = true
+offset_left = -23.0
+offset_top = -8.0
+offset_right = 1.0
+offset_bottom = 16.0
+theme = ExtResource("3_2ndsp")
+text = "1"
+label_settings = SubResource("LabelSettings_1xofn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CostGreen" type="Label" parent="CostDisplay"]
+unique_name_in_owner = true
+offset_left = -1.0
+offset_top = -8.0
+offset_right = 23.0
+offset_bottom = 16.0
+theme = ExtResource("3_2ndsp")
+text = "1"
+label_settings = SubResource("LabelSettings_11vvc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardBack" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-20, -20)
+texture = ExtResource("6_spa0x")
+
+[node name="Rarity" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -14.0
+offset_top = 13.0
+offset_right = -2.0
+offset_bottom = 25.0
+grow_horizontal = 0
+texture = ExtResource("7_fq4np")
+expand_mode = 1
+stretch_mode = 5

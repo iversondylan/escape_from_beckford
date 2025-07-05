@@ -1,0 +1,1 @@
+class_name BattleSceneAreaLeft extends Area2D

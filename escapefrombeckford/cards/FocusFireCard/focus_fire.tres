@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://daxsngijhqe3k"]
+
+[ext_resource type="Script" uid="uid://dn6nl6xdifl5d" path="res://cards/FocusFireCard/focus_fire_action.gd" id="1_iwper"]
+[ext_resource type="Script" uid="uid://d2f0qepe047dc" path="res://cards/card_data.gd" id="1_numeo"]
+[ext_resource type="AudioStream" uid="uid://idwtyj2act0h" path="res://assets/sfx/focus_buzz.wav" id="3_n8er5"]
+[ext_resource type="Texture2D" uid="uid://c0yql2msvjvmi" path="res://assets/sprites/target_reticule.png" id="4_n8er5"]
+
+[resource]
+script = ExtResource("1_numeo")
+id = 0
+card_type = 0
+target_type = 4
+rarity = 0
+name = "Focus Fire"
+description = "Mark an enemy to be the target of your minion's basic attacks. Only one enemy can be marked at a time."
+cost_red = 0
+cost_green = 0
+cost_blue = 1
+texture = ExtResource("4_n8er5")
+actions = Array[GDScript]([ExtResource("1_iwper")])
+sound = ExtResource("3_n8er5")
+metadata/_custom_type_script = "uid://d2f0qepe047dc"

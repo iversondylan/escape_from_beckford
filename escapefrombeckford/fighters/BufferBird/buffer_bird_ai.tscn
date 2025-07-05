@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh43xfsx3lxpc"]
+
+[ext_resource type="Script" uid="uid://cxu0uj66yny6s" path="res://fighters/npc_action_picker.gd" id="1_5ckb5"]
+[ext_resource type="Script" uid="uid://25ksl5joxkq0" path="res://fighters/BufferBird/wind_flurry_action.gd" id="2_65bsy"]
+[ext_resource type="Script" uid="uid://dembxs6kbsrkm" path="res://fighters/BufferBird/attack_action.gd" id="3_cj7o8"]
+
+[node name="BufferBirdAI" type="Node"]
+script = ExtResource("1_5ckb5")
+
+[node name="WindFlurry" type="Node" parent="."]
+script = ExtResource("2_65bsy")
+
+[node name="Attack" type="Node" parent="."]
+script = ExtResource("3_cj7o8")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drp4jb5xew6kh"
+path="res://.godot/imported/MTG Arena OST - Throne of Eldraine 2.mp3-187e85514736f3b21aa5dac9ef2f02d6.mp3str"
+
+[deps]
+
+source_file="res://assets/music/stolen_music/MTG Arena OST - Throne of Eldraine 2.mp3"
+dest_files=["res://.godot/imported/MTG Arena OST - Throne of Eldraine 2.mp3-187e85514736f3b21aa5dac9ef2f02d6.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

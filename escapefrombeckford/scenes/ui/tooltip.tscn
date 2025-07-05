@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://3hsvnd70wteq"]
+
+[ext_resource type="Theme" uid="uid://d2wc7fposrlqs" path="res://themes/wizard_theme.tres" id="1_kv0sd"]
+[ext_resource type="Script" uid="uid://boxb2lksxdnk5" path="res://scenes/ui/tooltip.gd" id="2_o3msy"]
+[ext_resource type="Texture2D" uid="uid://c54dbo8n7r3g" path="res://assets/sprites/attack.PNG" id="3_acp5l"]
+[ext_resource type="Theme" uid="uid://1dr1eewpv0jd" path="res://themes/ui_theme.tres" id="4_o3msy"]
+
+[node name="Tooltip" type="PanelContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -160.0
+offset_right = 120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_kv0sd")
+script = ExtResource("2_o3msy")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TooltipIcon" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_acp5l")
+stretch_mode = 5
+
+[node name="TooltipDescription" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_o3msy")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Tooltip description.
+Tooltip description."
