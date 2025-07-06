@@ -3,7 +3,7 @@ class_name CardVisuals extends Control
 @export var card_data: CardData : set = set_card_data
 
 @onready var glow: Sprite2D = %Glow
-@onready var card_front: Sprite2D = %CardFront
+@onready var card_front: TextureRect = %CardFront
 @onready var cost_blue: Label = %CostBlue
 @onready var cost_red: Label = %CostRed
 @onready var cost_green: Label = %CostGreen

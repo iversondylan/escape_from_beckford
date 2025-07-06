@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c477qukem6kmd" path="res://scenes/card_target_selector.tscn" id="2_yinqy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eyfoh"]
-radius = 1600.0
+radius = 2500.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eyfoh"]
 size = Vector2(1920, 310.75)
@@ -16,7 +16,7 @@ size = Vector2(1920, 559.75)
 script = ExtResource("1_eyfoh")
 
 [node name="DebugShape" type="CollisionShape2D" parent="."]
-position = Vector2(960, 2500)
+position = Vector2(960, 3500)
 shape = SubResource("CircleShape2D_eyfoh")
 
 [node name="ColorRect" type="ColorRect" parent="."]
