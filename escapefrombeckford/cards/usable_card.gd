@@ -112,9 +112,9 @@ func set_usable_card_z_index(index: int):
 	card_visuals.card_art_rect.z_index = index
 	card_visuals.card_art_rect.z_index = index
 	card_visuals.cost_container.z_index = index
-	card_visuals.cost_red.z_index = index
-	card_visuals.cost_green.z_index = index
-	card_visuals.cost_blue.z_index = index
+	card_visuals.cost_red_sprites.z_index = index
+	card_visuals.cost_green_sprites.z_index = index
+	card_visuals.cost_blue_sprites.z_index = index
 	#state.z_index = index
 	#card_back_sprite2d.z_index = index
 
@@ -137,12 +137,12 @@ func _process(_delta: float) -> void:
 	pass
 
 func _update_graphics():
-	if card_visuals.cost_blue.get_text() != str(card_data.cost_blue):
-		card_visuals.cost_blue.set_text(str(card_data.cost_blue))
-	if card_visuals.cost_red.get_text() != str(card_data.cost_red):
-		card_visuals.cost_red.set_text(str(card_data.cost_red))
-	if card_visuals.cost_green.get_text() != str(card_data.cost_green):
-		card_visuals.cost_green.set_text(str(card_data.cost_green))
+	#if card_visuals.cost_blue.get_text() != str(card_data.cost_blue):
+		#card_visuals.cost_blue.set_text(str(card_data.cost_blue))
+	#if card_visuals.cost_red.get_text() != str(card_data.cost_red):
+		#card_visuals.cost_red.set_text(str(card_data.cost_red))
+	#if card_visuals.cost_green.get_text() != str(card_data.cost_green):
+		#card_visuals.cost_green.set_text(str(card_data.cost_green))
 	if card_visuals.name_label.get_text() != card_data.name:
 		card_visuals.name_label.set_text(card_data.name)
 	if card_visuals.description.get_text() != card_data.description:
