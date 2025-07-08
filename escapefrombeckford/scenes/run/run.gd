@@ -27,6 +27,7 @@ const TREASURE_SCENE := preload("res://scenes/treasure/treasure_room.tscn")
 var account: RunAccount
 var player_character: CombatantData
 var deck: CardPile
+var draftable_cards: CardPile
 
 func _ready() -> void:
 	if !run_startup:
@@ -36,6 +37,7 @@ func _ready() -> void:
 		RunStartup.StartupType.NEW_RUN:
 			player_character = run_startup.player_character.create_instance()
 			deck = run_startup.deck.duplicate()
+			draftable_cards = run_startup.draftable_cards.duplicate()
 			print("run.gd STARTING RUN WITH NEW CHARACTER")
 			_start_run()
 		RunStartup.StartupType.CONTINUED_RUN:
@@ -46,6 +48,7 @@ func _start_run() -> void:
 	GameRecord.account = account
 	GameRecord.player_data = player_character
 	GameRecord.deck = deck
+	GameRecord.draftable_cards = draftable_cards
 	_connect_signals()
 	_init_top_bar()
 	print("TO DO: procedurally generate a map")

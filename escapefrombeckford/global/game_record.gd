@@ -4,6 +4,7 @@ extends Node
 var account: RunAccount
 var player_data: CombatantData
 var deck: CardPile
+var draftable_cards: CardPile
 var slain_enemies: Array[CombatantData]
 
 func set_player_data(_player_data: CombatantData):

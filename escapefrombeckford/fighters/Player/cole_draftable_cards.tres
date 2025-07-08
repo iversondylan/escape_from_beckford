@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardPile" load_steps=8 format=3 uid="uid://bb2svevqwn2v7"]
+
+[ext_resource type="Script" uid="uid://d2f0qepe047dc" path="res://cards/card_data.gd" id="1_fen0u"]
+[ext_resource type="Script" uid="uid://dnybrgm0o6gjj" path="res://custom_resources/card_pile.gd" id="2_a8mjb"]
+[ext_resource type="Resource" uid="uid://iv5lrhm4b60n" path="res://cards/SpacetimeWarp/spacetime_warp_data.tres" id="2_p6bwh"]
+[ext_resource type="Resource" uid="uid://ds3np5rpek8ot" path="res://cards/BerserkersFury/berserkers_fury.tres" id="3_8eqlo"]
+[ext_resource type="Resource" uid="uid://daxsngijhqe3k" path="res://cards/FocusFireCard/focus_fire.tres" id="4_1xu4j"]
+[ext_resource type="Resource" uid="uid://dfgkvy2yw1a3e" path="res://cards/AttackCard/attack_card.tres" id="5_4xfwm"]
+[ext_resource type="Resource" uid="uid://b7txf6d8vmjkk" path="res://cards/SpectralCloneCard/spectral_clone.tres" id="6_ltswl"]
+
+[resource]
+script = ExtResource("2_a8mjb")
+cards = Array[ExtResource("1_fen0u")]([ExtResource("2_p6bwh"), ExtResource("3_8eqlo"), ExtResource("4_1xu4j"), ExtResource("5_4xfwm"), ExtResource("5_4xfwm"), ExtResource("5_4xfwm"), ExtResource("6_ltswl"), ExtResource("6_ltswl"), ExtResource("6_ltswl")])
+metadata/_custom_type_script = "uid://dnybrgm0o6gjj"

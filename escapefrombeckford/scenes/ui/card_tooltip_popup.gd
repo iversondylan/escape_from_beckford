@@ -2,12 +2,17 @@ class_name CardTooltipPopup extends Control
 
 const MENU_CARD_SCENE := preload("res://cards/menu_card/menu_card.tscn")
 
+@export var background_color: Color = Color("0d11259e")
+
+@onready var background: ColorRect = %Background
+
 @onready var tooltip_card_container: CenterContainer = %TooltipCardContainer
 @onready var card_description: RichTextLabel = %CardDescription
 
 func _ready() -> void:
 	for card: MenuCard in tooltip_card_container.get_children():
 		card.queue_free()
+	background.color = background_color
 	
 
 func show_tooltip(card: CardData) -> void:
