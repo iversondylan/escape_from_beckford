@@ -1,10 +1,10 @@
 [gd_scene load_steps=24 format=3 uid="uid://k11cug4p8o3l"]
 
 [ext_resource type="Script" uid="uid://dixfcu6jmx0kd" path="res://scenes/main.gd" id="1_tbgi4"]
-[ext_resource type="AudioStream" uid="uid://drp4jb5xew6kh" path="res://assets/music/stolen_music/MTG Arena OST - Throne of Eldraine 2.mp3" id="2_dp3eg"]
+[ext_resource type="AudioStream" uid="uid://dqm0r66m6ggwt" path="res://assets/music/enchanted tiki 86.mp3" id="2_jscy8"]
 [ext_resource type="Script" uid="uid://0a8baesyqdot" path="res://scenes/battle_scene.gd" id="3_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://gmxev02ltcly" path="res://scenes/battle_groups/battle_group_friendly.tscn" id="4_jbj1t"]
-[ext_resource type="Texture2D" uid="uid://boe18x28cbaaf" path="res://assets/backgrounds/DF_Path_NoRorik_1080.png" id="4_jscy8"]
+[ext_resource type="Texture2D" uid="uid://jml4obgrdfeg" path="res://assets/backgrounds/flat-forestred-dark.png" id="4_jscy8"]
 [ext_resource type="Script" uid="uid://b4bb2s8x838ip" path="res://scenes/battle_scene_area_left.gd" id="4_muem4"]
 [ext_resource type="Script" uid="uid://ckq1sgjqlphh3" path="res://scenes/ui/battle_ui.gd" id="5_a8y0u"]
 [ext_resource type="Theme" uid="uid://d2wc7fposrlqs" path="res://themes/wizard_theme.tres" id="5_jkv2x"]
@@ -28,7 +28,7 @@ size = Vector2(1200, 200)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_tbgi4")
-music = ExtResource("2_dp3eg")
+music = ExtResource("2_jscy8")
 
 [node name="Battle_Scene" type="CanvasLayer" parent="."]
 script = ExtResource("3_jbj1t")
