@@ -73,10 +73,10 @@ theme_override_constants/margin_bottom = 20
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="GoldReward" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("4_kxtc4")]
+[node name="GoldRewardButton" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("4_kxtc4")]
 layout_mode = 2
 
-[node name="CardReward" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("4_kxtc4")]
+[node name="CardRewardButton" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("4_kxtc4")]
 layout_mode = 2
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
@@ -87,5 +87,5 @@ theme_override_font_sizes/font_size = 40
 text = "Continue
 "
 
-[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_button_pressed"]
