@@ -7,9 +7,10 @@
 
 [resource]
 script = ExtResource("1_sxbgo")
-id = "defend"
+id = 0
 card_type = 1
 target_type = 0
+rarity = 2
 name = "Defend"
 description = "Gain 5 armor."
 cost_red = 0

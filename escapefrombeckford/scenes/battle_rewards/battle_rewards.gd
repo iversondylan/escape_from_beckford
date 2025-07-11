@@ -30,10 +30,16 @@ func _ready() -> void:
 	run_account = RunAccount.new()
 	run_account.gold_changed.connect(func(): print("gold: %s" % run_account.gold))
 	player_data = preload("res://fighters/Player/basic_player_data.tres").create_instance()
+	GameRecord.deck = preload("res://fighters/Player/cole_basic_deck.tres").duplicate()
+	GameRecord.draftable_cards = preload("res://fighters/Player/cole_draftable_cards.tres").duplicate()
 	
 	add_gold_reward(77)
 	add_card_reward()
 	add_card_reward()
+	add_card_reward()
+	add_card_reward()
+	add_card_reward()
+	
 
 func add_gold_reward(n_gold: int) -> void:
 	var gold_reward := REWARD_BUTTON.instantiate() as RewardButton

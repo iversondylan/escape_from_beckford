@@ -19,7 +19,7 @@ var cost_blue: int = 0 : set = set_cost_blue
 
 func set_card_data(_card_data: CardData) -> void:
 	if !is_node_ready():
-		await  ready
+		await ready
 	card_data = _card_data
 	name_label.text = card_data.name
 	cost_red = _card_data.cost_red
