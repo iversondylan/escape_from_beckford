@@ -15,6 +15,7 @@ const CARD_TEXT := "Add New Card"
 @onready var rewards: VBoxContainer = %Rewards
 
 var card_reward_total_weight : float = 0.0
+
 var card_rarity_weights := {
 	CardData.Rarity.COMMON: 0.0,
 	CardData.Rarity.UNCOMMON: 0.0,
@@ -72,7 +73,7 @@ func _show_card_reward() -> void:
 				break
 	
 	card_reward.card_choices = card_choices
-	card_rewards.show()
+	card_reward.show()
 
 func _calculate_card_chances() -> void:
 	card_reward_total_weight = run_account.common_weight + run_account.uncommon_weight + run_account.rare_weight
@@ -86,7 +87,7 @@ func _modify_weights(rarity_rolled: CardData.Rarity) -> void:
 	else:
 		run_account.rare_weight = clampf(run_account.rare_weight + 0.3, run_account.BASE_RARE_WEIGHT, 5.0)
 
-func _get_random_possible_card(possible_cards: Array[CardData], rarity: CardData.Rarity) -> void:
+func _get_random_possible_card(possible_cards: Array[CardData], rarity: CardData.Rarity) -> CardData:
 	var all_possible_cards := possible_cards.filter(
 		func(card: CardData):
 			return card.rarity == rarity
@@ -97,6 +98,13 @@ func _on_gold_reward_taken(n_gold: int) -> void:
 	if !run_account:
 		return
 	run_account.gold += n_gold
+
+func _on_card_reward_taken(card: CardData) -> void:
+	if !player_data or !card or !GameRecord.deck:
+		return
+	print("Deck Before:\n%s\n" % GameRecord.deck)
+	GameRecord.deck.add_back(card)
+	print("Deck After:\n%s\n" % GameRecord.deck)
 
 func _on_back_button_pressed() -> void:
 	Events.battle_rewards_exited.emit()
